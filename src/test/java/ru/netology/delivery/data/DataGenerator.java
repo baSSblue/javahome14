@@ -10,6 +10,7 @@ import java.util.Locale;
 import java.util.Random;
 
 public class DataGenerator {
+    static Faker faker = new Faker(new Locale("ru"));
 
     private DataGenerator() {
     }
@@ -37,7 +38,7 @@ public class DataGenerator {
         }
 
         public static UserInfo generateUser(String locale) {
-            return new UserInfo(generateCity(), generateName(locale), generatePhone(locale));
+            return new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
         }
     }
 
